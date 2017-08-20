@@ -102,7 +102,11 @@ namespace Autofac.Features.LightweightAdapters
                     });
             }
 
+#if NETSTANDARD2_0
+            return Array.Empty<IComponentRegistration>();
+#else
             return new IComponentRegistration[0];
+#endif
         }
 
         public bool IsAdapterForIndividualComponents => true;

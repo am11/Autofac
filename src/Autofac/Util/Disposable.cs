@@ -41,6 +41,7 @@ namespace Autofac.Util
         /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
         /// </summary>
         [SuppressMessage("Microsoft.Design", "CA1063:ImplementIDisposableCorrectly", Justification = "Dispose is implemented correctly, FxCop just doesn't see it.")]
+        [SuppressMessage("Microsoft.Usage", "CA1816:CallGCSuppressFinalizeCorrectly", Justification = "Dispose is implemented correctly, FxCop just doesn't see it.")]
         public void Dispose()
         {
             var wasDisposed = Interlocked.Exchange(ref _isDisposed, DisposedFlag);

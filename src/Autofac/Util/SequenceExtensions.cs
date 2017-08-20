@@ -46,6 +46,7 @@ namespace Autofac.Util
             return string.Join(separator, elements.ToArray());
         }
 
+#if !NETSTANDARD2_0
         /// <summary>
         /// Appends the item to the specified sequence.
         /// </summary>
@@ -79,6 +80,7 @@ namespace Autofac.Util
             foreach (var t in sequence)
                 yield return t;
         }
+#endif
 
         public static void AddRange<T>(this ICollection<T> collection, IEnumerable<T> items)
         {

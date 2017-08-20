@@ -108,6 +108,7 @@ function Invoke-DotNetBuild
   {
     foreach($Project in $ProjectDirectory)
     {
+      Write-Message ".NET Core SDK version $(Project.FullName) is already installed"
       & dotnet build ("""" + $Project.FullName + """") --configuration Release
       if ($LASTEXITCODE -ne 0)
       {

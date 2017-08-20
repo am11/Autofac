@@ -135,6 +135,7 @@ namespace Autofac.Core.Lifetime
             return scope;
         }
 
+        [SuppressMessage("Microsoft.Design", "CA1030:UseEventsWhereAppropriate", Justification = "We would be boxing and unboxing the scope argument in EventArg derived class for no good reason.")]
         private void RaiseBeginning(ILifetimeScope scope)
         {
             var handler = ChildLifetimeScopeBeginning;

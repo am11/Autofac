@@ -24,6 +24,7 @@
 // OTHER DEALINGS IN THE SOFTWARE.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 
 namespace Autofac.Core.Registration
@@ -34,6 +35,7 @@ namespace Autofac.Core.Registration
     /// method to resolve an optional dependency.
     /// </summary>
     /// <remarks>This exception is fatal. See <see cref="DependencyResolutionException"/> for more information.</remarks>
+    [SuppressMessage("Microsoft.Design", "CA1032:ImplementStandardExceptionConstructors", Justification = "Unused ctors.")]
     public class ComponentNotRegisteredException : DependencyResolutionException
     {
         /// <summary>

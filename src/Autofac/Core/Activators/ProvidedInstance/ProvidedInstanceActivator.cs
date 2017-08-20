@@ -42,7 +42,7 @@ namespace Autofac.Core.Activators.ProvidedInstance
         /// </summary>
         /// <param name="instance">The instance to provide.</param>
         public ProvidedInstanceActivator(object instance)
-            : base(GetType(instance))
+            : base(GetTypeInternal(instance))
         {
             _instance = instance;
         }
@@ -92,7 +92,7 @@ namespace Autofac.Core.Activators.ProvidedInstance
             base.Dispose(disposing);
         }
 
-        private static Type GetType(object instance)
+        private static Type GetTypeInternal(object instance)
         {
             if (instance == null) throw new ArgumentNullException(nameof(instance));
 

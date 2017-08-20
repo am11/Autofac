@@ -24,6 +24,7 @@
 // OTHER DEALINGS IN THE SOFTWARE.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 
 namespace Autofac.Core
@@ -34,9 +35,10 @@ namespace Autofac.Core
     /// been made during the operation. For example, 'on activated' handlers may have already been
     /// fired, or 'single instance' components partially constructed.
     /// </summary>
-#if NET45
+#if NET45 || NETSTANDARD2_0
     [Serializable]
 #endif
+    [SuppressMessage("Microsoft.Design", "CA1032:ImplementStandardExceptionConstructors", Justification = "Unused ctors.")]
     public class DependencyResolutionException : Exception
     {
         /// <summary>
